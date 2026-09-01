@@ -246,6 +246,9 @@ a:hover { text-decoration: underline; }
 
 .product-body { padding: 22px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
 .product-body h3 { color: var(--navy); font-size: 19px; }
+a.product-visual { text-decoration: none; }
+.card-title { color: var(--navy); }
+.card-title:hover { color: var(--accent-dark); text-decoration: none; }
 .product-spec {
   font-size: 13.5px;
   color: var(--accent-dark);
@@ -448,6 +451,86 @@ details p { padding: 0 20px 18px; color: var(--muted); font-size: 15px; }
   padding: 18px 0;
   font-size: 13px;
   color: #8fa0ab;
+}
+
+/* ---------- Product detail page ---------- */
+.breadcrumb {
+  background: var(--bg-alt);
+  border-bottom: 1px solid var(--line);
+  font-size: 14px;
+  padding: 12px 0;
+}
+.breadcrumb a { color: var(--accent-dark); font-weight: 600; }
+.breadcrumb span { color: var(--muted); margin: 0 6px; }
+.breadcrumb b { color: var(--navy); }
+
+.product-hero-inner {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 44px;
+  align-items: center;
+}
+.product-visual-lg {
+  height: 300px;
+  border-radius: var(--radius);
+  display: grid;
+  place-items: center;
+  font-size: 44px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.92);
+  box-shadow: var(--shadow);
+}
+.product-hero-copy h1 {
+  color: var(--navy);
+  font-size: clamp(28px, 3.8vw, 40px);
+  letter-spacing: -0.015em;
+  margin-bottom: 12px;
+}
+.ph-tagline { font-size: 17.5px; color: var(--muted); margin-bottom: 18px; }
+.ph-chips { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px; }
+.chip {
+  background: #fdf3e9;
+  color: var(--accent-dark);
+  font-weight: 700;
+  font-size: 13.5px;
+  padding: 7px 14px;
+  border-radius: 999px;
+}
+.ph-intro { font-size: 15.5px; margin-bottom: 26px; }
+
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+.check-list { list-style: none; }
+.check-list li {
+  padding: 11px 0 11px 32px;
+  position: relative;
+  border-bottom: 1px solid var(--line);
+  font-size: 15px;
+}
+.check-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 2px;
+  color: var(--accent);
+  font-weight: 800;
+}
+
+.cta-band {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+.cta-band h2 { color: #fff; font-size: clamp(24px, 3vw, 32px); margin-bottom: 8px; }
+.cta-band .btn-ghost { background: transparent; border-color: rgba(255,255,255,0.4); color: #fff; }
+.cta-band .btn-ghost:hover { border-color: #fff; }
+
+@media (max-width: 920px) {
+  .product-hero-inner { grid-template-columns: 1fr; }
+  .product-visual-lg { height: 200px; }
+  .two-col { grid-template-columns: 1fr; }
+  .cta-band { flex-direction: column; align-items: flex-start; }
 }
 
 /* ---------- Mobile sticky bar ---------- */

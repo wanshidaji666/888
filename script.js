@@ -29,6 +29,28 @@
     });
   }
 
+  /* ---------- Products dropdown (click support for touch) ---------- */
+  var dropItem = document.querySelector(".nav-item.has-drop");
+  if (dropItem) {
+    var dropToggle = dropItem.querySelector(".nav-drop-toggle");
+    if (dropToggle) {
+      dropToggle.addEventListener("click", function (e) {
+        // First tap/click: open the menu instead of navigating.
+        // Second tap/click (already open): navigate normally.
+        if (!dropItem.classList.contains("open")) {
+          e.preventDefault();
+          dropItem.classList.add("open");
+        }
+      });
+    }
+    // Close the dropdown when clicking anywhere outside it
+    document.addEventListener("click", function (e) {
+      if (!dropItem.contains(e.target)) {
+        dropItem.classList.remove("open");
+      }
+    });
+  }
+
   /* ---------- Landing attribution (in-memory only) ---------- */
   var attribution = {
     landing: location.pathname,

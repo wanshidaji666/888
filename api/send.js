@@ -4,7 +4,7 @@
 //   1. Sign up at resend.com, create an API Key (copy it immediately - shown only once).
 //   2. In Vercel: Project -> Settings -> Environment Variables, add:
 //        RESEND_API_KEY  = your key
-//        RFQ_TO_EMAIL    = the inbox that should receive RFQs (e.g. sales@dazhisteel.com)
+//        RFQ_TO_EMAIL    = the inbox that should receive RFQs
 //   3. Redeploy.
 // Without these variables the form will show the fallback message instead of sending.
 
@@ -44,7 +44,7 @@ export default async function handler(req, res) {
         from: 'RFQ Form <onboarding@resend.dev>',
         to: [RFQ_TO_EMAIL],
         reply_to: replyTo,
-        subject: `New RFQ from website - ${d.product || 'Corten Steel'} (${d.country || '-'})`,
+        subject: `New RFQ from website - ${d.product || 'Nickel Alloy'} (${d.country || '-'})`,
         text: lines.join('\n')
       })
     });
